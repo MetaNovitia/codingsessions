@@ -26,13 +26,13 @@ class Navigation extends Component {
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink className="navlink" tag={Link} to="/">Home</NavLink>
+              <NavLink className="navlink" tag={Link} to="/codingsessions">Home</NavLink>
             </NavItem>
             <NavItem>
               <NavLink className="navlink" tag={Link} to="/events">Topics</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="navlink" tag={Link} to="/problems">Problems</NavLink>
+              <NavLink className="navlink" tag={Link} to="/Problems">Problems</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
