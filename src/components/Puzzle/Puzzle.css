@@ -1,0 +1,52 @@
+.small {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10px;
+}
+
+.center {
+    justify-content: center;
+    justify-self: center;
+    justify-items: center;
+}
+
+.space {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left:0;
+}
+
+.m {
+    height: 80%;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-color: transparent;
+    color: white;
+}
+
+.graphtraversal {
+    background-color: rgb(151, 151, 201);
+}
+
+.mst {
+    background-color: rgb(228, 169, 188);
+}
+
+.title{
+    color: white;
+    font-size: 80px;
+    padding-top: 16%;
+}
+
+.subtitle{
+    color: white;
+    font-size: 20px;
+    padding-bottom: 28%;
+}

@@ -1,0 +1,28 @@
+.word {
+    color: white;
+}
+
+.word :hover{
+    color: rgb(37, 37, 37);
+}
+
+.graphtraversal {
+    background-color: rgb(151, 151, 201);
+}
+
+.mst {
+    background-color: rgb(228, 169, 188);
+}
+
+.plink {
+    color : white; 
+}
+
+.pright{
+    margin-right: 4%;
+    margin-left: 4%;
+}
+  
+.plink:hover {
+    text-decoration-color: transparent;
+}

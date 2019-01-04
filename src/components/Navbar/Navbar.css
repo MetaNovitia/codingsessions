@@ -1,0 +1,10 @@
+.navlink {
+  color : white; 
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.navlink:hover {
+  color: rgb(148, 148, 219);
+  font-size: 30px;
+}
