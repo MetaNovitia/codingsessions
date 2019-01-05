@@ -8,7 +8,7 @@ export default class Home extends Component {
     render() {
         return (
             <Container fluid className="black-b full center">
-                <NavBar></NavBar>
+                <NavBar open="home"></NavBar>
                 <Row className="title center">Coding Session</Row>
                 <Row className="subtitle center">by ACM@UCI</Row>
             </Container>

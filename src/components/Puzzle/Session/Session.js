@@ -2,22 +2,31 @@ import React, { Component } from 'react';
 import { Row, Col} from 'reactstrap';
 import Problem from './Problem/Problem';
 import Announcement from './Announcement/Announcement';
+import $ from 'jquery';
 import './Session.css';
 
 export default class Session extends Component {
     constructor(props) {
         super(props);
         this.state = { collapse: false };
+        this.processData = this.processData.bind(this);
         this.quarter = props.quarter;
         this.session = props.session;
         this.rows = [[]];
+        this.end = true;
+        this.link = "https://raw.githubusercontent.com/MetaNovitia/codingsessions/master/public/" +
+                    this.quarter.split(" ")[0] + "%20" + 
+                    this.quarter.split(" ")[1] + "/" +
+                    this.session + ".csv" ;
 
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "/Winter 2019/1.csv", false);
-        xhr.send();
-        this.end=props.end;
-        this.processData(xhr.responseText);
+    }
 
+    componentDidMount() {
+        // should be changed to axios request, xhr is deprecated
+        $.ajax({
+            url: this.link,
+            context: document.body
+        }).done(this.processData);
     }
 
     processData(allText) {
@@ -87,6 +96,13 @@ export default class Session extends Component {
             );
         }
 
+        this.rows = <div>{this.rows}</div>;
+        this.toggle();
+
+    }
+
+    toggle() {
+        this.setState({ collapse: !this.state.collapse });
     }
 
     render() {

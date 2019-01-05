@@ -8,3 +8,15 @@
   color: rgb(148, 148, 219);
   font-size: 30px;
 }
+
+.open {
+  color: rgb(91, 91, 173);
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.open:hover {
+  color: rgb(91, 91, 173);
+  font-size: 24px;
+  margin-right: 8px;
+}

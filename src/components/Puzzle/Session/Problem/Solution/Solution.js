@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody} from 'reactstrap';
 import './Solution.css';
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import $ from 'jquery';
 import { tomorrowNight } from 'react-syntax-highlighter/dist/styles/hljs';
 
 var Python = (codeString) => {
@@ -19,29 +20,48 @@ export default class Solution extends Component {
         super(props);
         this.show = props.sol;
         this.state = {
-            modal: false
+            modal: false,
+            collapse: false
         };
         this.toggle = this.toggle.bind(this);
+        this.setCode = this.setCode.bind(this);
         this.type = (props.link.split("."));
         this.type = this.type[this.type.length-1];
         this.link = props.link;
         this.txt = props.txt;
 
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "solutions/"+props.quarter+"/"+props.session+"/"+props.link, false);
-        xhr.send();
-        if(this.type==='py'){
-            this.code = Python(xhr.responseText);
-        }else{
-            this.code = Cpp(xhr.responseText);
-        }
+        this.solLink =   "https://raw.githubusercontent.com/MetaNovitia/codingsessions/master/public/solutions/" +
+                            props.quarter.split(' ')[0] + "%20" + 
+                            props.quarter.split(' ')[1] + "/" + 
+                            props.session +"/"+props.link;
         
+    }
+
+    componentDidMount() {
+        // should be changed to axios request, xhr is deprecated
+        $.ajax({
+            url: this.solLink,
+            context: document.body
+        }).done(this.setCode);
+    }
+
+    setCode(data){
+        if(this.type==='py'){
+            this.code = Python(data);
+        }else{
+            this.code = Cpp(data);
+        }
+        this.togglevis();
     }
 
     toggle() {
         this.setState({
             modal: !this.state.modal
         });
+    }
+
+    togglevis() {
+        this.setState({ collapse: !this.state.collapse });
     }
 
     
