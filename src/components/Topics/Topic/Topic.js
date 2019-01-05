@@ -9,7 +9,12 @@ export default class Topic extends Component {
         this.quarter = props.quarter;
         this.session = props.session;
 
+        this.link = "https://raw.githubusercontent.com/MetaNovitia/codingsessions/master/src/topics/" +
+                    this.quarter.split(" ")[0] + "%20" +
+                    this.quarter.split(" ")[1] + "/" +
+                    this.session + ".csv";
 
+        
 
     }
 
