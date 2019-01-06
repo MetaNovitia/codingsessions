@@ -22,7 +22,6 @@ export default class Session extends Component {
     }
 
     componentDidMount() {
-        // should be changed to axios request, xhr is deprecated
         $.ajax({
             url: this.link,
             context: document.body
