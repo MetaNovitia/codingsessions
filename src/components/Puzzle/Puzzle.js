@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {Alert, Container, Row} from 'reactstrap';
 import NavBar from '../Navbar/Navbar';
 import Session from './Session/Session';
+import Footer from '../Footer/Footer';
 import './Puzzle.css';
 
 export default class Puzzle extends Component {
@@ -27,7 +28,7 @@ export default class Puzzle extends Component {
             <div><br/><br/></div>
             
             <Session end = {true} quarter="Winter 2019" session='1'></Session>
-
+            <Footer></Footer>
         </Container>
         );
     }

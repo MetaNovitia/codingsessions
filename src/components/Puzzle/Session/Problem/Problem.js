@@ -19,7 +19,9 @@ export default class Problem extends Component {
     }
     this.link = props.link
     this.obj =  <a  className= {"plink word "+this.props.diff} 
-                    href={this.link} >
+                    href={this.link} 
+                    target="_blank"
+                    rel="noopener noreferrer">
                     <CardTitle>{props.name}</CardTitle>
                 </a>
     

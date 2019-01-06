@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Container, Row} from 'reactstrap';
 import NavBar from '../Navbar/Navbar';
 import Topic from './Topic/Topic';
+import Footer from '../Footer/Footer';
 import './Topics.css';
 
 export default class Topics extends Component {
@@ -15,9 +16,10 @@ export default class Topics extends Component {
 
             <div><br/><br/></div>
 
-            <Row className="subtitle center">-------- Slides --------</Row>
-
             <Topic session="1" quarter="Winter 2019"></Topic>
+            <div><br/><br/></div>
+            <div><br/><br/></div>
+            <Footer></Footer>
             
 
         </Container>

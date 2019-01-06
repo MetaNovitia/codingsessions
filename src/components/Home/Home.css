@@ -7,5 +7,22 @@
 .subtitle{
     color: white;
     font-size: 20px;
-    padding-bottom: 28%;
+    padding-bottom: 26%;
+}
+
+.head {
+    color: white;
+    font-size: 40px;
+    letter-spacing: 10px;
+    margin-left: 80px;
+    margin-right: 70px;
+    text-orientation: sideways;
+}
+
+.slide {
+    width: 100%;
+}
+
+.slides {
+    max-width: 75%;
 }

@@ -29,6 +29,7 @@
     margin-right: 20px;
     border-color: transparent;
     color: white;
+    border-radius: 30px;
 }
 
 .graphtraversal {
@@ -37,16 +38,4 @@
 
 .mst {
     background-color: rgb(228, 169, 188);
-}
-
-.title{
-    color: white;
-    font-size: 80px;
-    padding-top: 16%;
-}
-
-.subtitle{
-    color: white;
-    font-size: 20px;
-    padding-bottom: 28%;
 }

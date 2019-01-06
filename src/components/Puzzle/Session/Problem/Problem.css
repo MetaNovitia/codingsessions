@@ -21,6 +21,7 @@
 .pright{
     margin-right: 4%;
     margin-left: 4%;
+    border-radius: 20px;
 }
   
 .plink:hover {
