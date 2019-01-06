@@ -38,7 +38,6 @@ export default class Solution extends Component {
     }
 
     componentDidMount() {
-        // should be changed to axios request, xhr is deprecated
         $.ajax({
             url: this.solLink,
             context: document.body

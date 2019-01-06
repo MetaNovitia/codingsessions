@@ -7,7 +7,7 @@ export default class Tabs extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.topics = props.topics;
-    this.slides = props.slides;
+    this.items = props.items;
     this.state = {
       activeTab: '1'
     };
@@ -26,7 +26,7 @@ export default class Tabs extends Component {
     for(i=0; i<this.topics.length; i++){
         this.tabPanes.push(
             <TabPane key={(i+1).toString()} tabId={(i+1).toString()}>
-                {this.slides[i]}
+                {this.items[i]}
             </TabPane>
         );
     }
