@@ -1,7 +1,9 @@
 ### BFS ###
 # Takes in an adjacency list (2D), and a source
 # Returns Shortest distance of each node from source (List)
-# Distance is calculated with how many edges away a node is from another
+# Distance is calculated with how many edges away a node is 
+# from another
+
 def bfs(adjList,source):
 
     # makes a 'queue' structure, with the source as initial data
@@ -17,13 +19,16 @@ def bfs(adjList,source):
     # that is connected to source
     while q!=[]:
 
-        front = q.pop(0)                            # get next node in line
+         # get next node in line
+        front = q.pop(0)                           
         
-        for node in adjList[front]:                 # go through all the edges the node has
+         # go through all the edges the node has
+        for node in adjList[front]:                
 
-            if distance[node] == -1:                # unvisited nodes
+            # unvisited nodes
+            if distance[node] == -1:                
                 q.append(node)
-                distance[node] = distance[front]+1  # update distance
+                distance[node] = distance[front]+1  
 
     return distance
 
@@ -53,6 +58,8 @@ def start():
 
     """
     
-    for i in range(5): print(str(i) + ": " + str(bfs([[1,2],[3,4],[1,4],[4],[1,2]],i)))
+    for i in range(5): 
+        print(  str(i) + ": " + 
+                str(bfs([[1,2],[3,4],[1,4],[4],[1,2]],i)))
     
 start()

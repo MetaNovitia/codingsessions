@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Container, Row} from 'reactstrap';
+import {Container} from 'reactstrap';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import $ from 'jquery';
 import { tomorrowNight } from 'react-syntax-highlighter/dist/styles/hljs';
@@ -21,7 +21,8 @@ export default class Topic extends Component {
         this.setCode = this.setCode.bind(this);
         this.toggle = this.toggle.bind(this);
         this.state = { collapse: false };
-        this.solLink = props.code
+        this.solLink = props.code;
+        this.code = null;
         
     }
 
@@ -37,17 +38,15 @@ export default class Topic extends Component {
     }
 
     setCode(data){
-        if(this.type==='py'){
-            this.code = Python(data);
-        }else{
-            this.code = Cpp(data);
-        }
+        this.code = Python(data);
         this.toggle();
     }
 
     render() {
         return (
-            this.code
+            <Container className="codes">
+                {this.code}
+            </Container>
         );
     }
 }

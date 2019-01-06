@@ -13,6 +13,7 @@ export default class Topic extends Component {
     constructor(props){
         super(props);
         this.processData = this.processData.bind(this);
+        this.processCode = this.processCode.bind(this);
         this.toggle = this.toggle.bind(this);
         this.state = { collapse: false };
         this.quarter = props.quarter;
@@ -32,7 +33,7 @@ export default class Topic extends Component {
     }
 
     toggle() {
-        this.setState({ collapse: !this.state.collapse });
+        this.setState({ collapse: this.state.collapse });
     }
 
     componentDidMount() {
@@ -88,13 +89,12 @@ export default class Topic extends Component {
         for (var i=1; i<lines.length; i++) {
             var code = lines[i].split(",");
             topics.push(code[0]);
-            codes.push( "https://github.com/MetaNovitia/codingsessions/blob/master/public/topics/" +
+            codes.push( "https://raw.githubusercontent.com/MetaNovitia/codingsessions/master/public/topics/" +
                         this.quarter.split(" ")[0] + "%20" +
                         this.quarter.split(" ")[1] + "/" +
                         code[1]);
-            codes[i] = <Code code={codes[i]}></Code>
+            codes[i-1] = <Code code={codes[i-1]}></Code>
         }
-
         this.codes = <Tabs items = {codes} topics={topics}></Tabs>
         this.toggle();
 

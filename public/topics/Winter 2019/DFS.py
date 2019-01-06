@@ -1,6 +1,7 @@
 ### DFS ###
-# Takes in an adjacency list (2D), a source, a 'visited' list, and the current path
-# Returns a cycle if there is a cycle from origin (2D List), else None
+# Takes in an adjacency list (2D), a source, a 'visited' list, 
+# and the current path. Returns a cycle if there is a cycle 
+# from origin (2D List), else None
 # RECURSIVE function
 def dfs(adjList, source, visited, path):
     
@@ -53,6 +54,8 @@ def start():
     """
     
     for i in range(5): 
-        print(str(i) + ": " + str(dfs( [[1,2],[3,4],[1,4],[4],[1,2]], i, [False for _ in range(5)], [i])) )
+        print(  str(i) + ": " + 
+                str(dfs( [[1,2],[3,4],[1,4],[4],[1,2]], i, 
+                [False for _ in range(5)], [i])) )
     
 start()

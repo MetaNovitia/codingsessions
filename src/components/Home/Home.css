@@ -17,6 +17,7 @@
     margin-left: 40px;
     margin-right: 70px;
     text-orientation: sideways;
+    max-height: 600px;
 }
 
 .slide {
@@ -25,4 +26,8 @@
 
 .slides {
     max-width: 75%;
+}
+
+.codes {
+    text-align: left;
 }
