@@ -3,9 +3,10 @@ import {Container, Row} from 'reactstrap';
 import $ from 'jquery';
 import Slides from './Slides/Slides';
 import Code from './Code/Code';
-import Resources from './Code/Code';
+import Resources from './Resources/Resources';
 import s_head from './slides.png';
 import c_head from './code.png';
+import r_head from './resources.png';
 import Tabs from './Tabs/Tabs';
 import './Topic.css';
 
@@ -117,7 +118,7 @@ export default class Topic extends Component {
         var resources = [];
         for (var i=1; i<lines.length; i++) {
             var resource = lines[i].split(",");
-            if (resource[0]===resource[2]){
+            if (resource[0][0]===resource[2][0]){
                 resources.push([]);
             }
             resources[resources.length-1].push(resource);
@@ -139,8 +140,9 @@ export default class Topic extends Component {
                     {this.codes}
                     <img src={c_head} alt="C O D E" className = "head"/>
                 </Row>
+                <Row><br/><br/><br/><br/><br/><br/></Row>
                 <Row>
-                    <img src={s_head} alt="S L I D E S" className = "head"/>
+                    <img src={r_head} alt="R E S O U R C E S" className = "head"/>
                     {this.resources}
                 </Row>
             </Container>

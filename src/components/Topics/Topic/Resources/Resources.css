@@ -1,0 +1,56 @@
+.resource {
+    margin-left: 20px;
+    width: 25%;
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+
+}
+
+.resource-title {
+    font-size: 25px;
+    padding: 10px;
+    margin: 15px;
+    margin-top: 40px;
+    background-color: gray;
+    border-radius: 30px;
+    border: 3px solid transparent;
+}
+
+.resource-title:hover {
+    border: 3px solid rgb(165, 165, 218);
+}
+
+.resource-text {
+    font-size: 18px;
+    padding: 40px;
+    margin-top: 20px;
+}
+
+.resource-link {
+    color: white;
+}
+
+.resource-link:hover {
+    color: rgb(165, 165, 218);
+    text-decoration: none;
+}
+
+.resource-btn {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 12px;
+    border: 3px solid transparent;
+    border-radius: 30px;
+    display: inline-table;
+}
+
+.resource-btn:hover {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+    border: 3px solid white;
+}

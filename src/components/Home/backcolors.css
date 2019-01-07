@@ -1,37 +1,3 @@
-.title{
-    color: white;
-    font-size: 80px;
-    padding-top: 16%;
-}
-
-.subtitle{
-    color: white;
-    font-size: 20px;
-    padding-bottom: 26%;
-}
-
-.head {
-    color: white;
-    font-size: 40px;
-    letter-spacing: 10px;
-    margin-left: 40px;
-    margin-right: 70px;
-    text-orientation: sideways;
-    max-height: 600px;
-}
-
-.slide {
-    width: 100%;
-}
-
-.slides {
-    max-width: 75%;
-}
-
-.codes {
-    text-align: left;
-}
-
 .blue {
     background-color: rgb(138, 193, 224);
 }

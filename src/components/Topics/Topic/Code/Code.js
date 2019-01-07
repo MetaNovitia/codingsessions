@@ -9,10 +9,6 @@ import './Code.css';
 var Python = (codeString) => {
     return <SyntaxHighlighter language='python' style={tomorrowNight}>{codeString}</SyntaxHighlighter>;  
   }
-  
-  var Cpp = (codeString) => {
-      return <SyntaxHighlighter language='cpp' style={tomorrowNight}>{codeString}</SyntaxHighlighter>;  
-  }
 
 export default class Topic extends Component {
 

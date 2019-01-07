@@ -3,6 +3,7 @@ import {Container, Row} from 'reactstrap';
 import NavBar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import './Home.css';
+import './backcolors.css';
 
 export default class Home extends Component {
 
