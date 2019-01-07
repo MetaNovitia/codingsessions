@@ -9,7 +9,7 @@ class Navigation extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: true
     };
 
     this.home = "navlink";

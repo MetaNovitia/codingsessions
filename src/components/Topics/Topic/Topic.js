@@ -3,6 +3,7 @@ import {Container, Row} from 'reactstrap';
 import $ from 'jquery';
 import Slides from './Slides/Slides';
 import Code from './Code/Code';
+import Resources from './Code/Code';
 import s_head from './slides.png';
 import c_head from './code.png';
 import Tabs from './Tabs/Tabs';
@@ -14,21 +15,28 @@ export default class Topic extends Component {
         super(props);
         this.processData = this.processData.bind(this);
         this.processCode = this.processCode.bind(this);
+        this.processResources = this.processResources.bind(this);
         this.toggle = this.toggle.bind(this);
         this.state = { collapse: false };
         this.quarter = props.quarter;
         this.session = props.session;
         this.slides = null;
         this.codes = null;
-        this.link = "https://raw.githubusercontent.com/MetaNovitia/codingsessions/master/public/topics/" +
-                    this.quarter.split(" ")[0] + "%20" +
-                    this.quarter.split(" ")[1] + "/" +
-                    this.session + ".csv";
+        this.resources = null;
+        this.slink =    "https://raw.githubusercontent.com/MetaNovitia/codingsessions/master/public/topics/" +
+                        this.quarter.split(" ")[0] + "%20" +
+                        this.quarter.split(" ")[1] + "/" +
+                        this.session + "_slides.csv";
 
         this.clink =    "https://raw.githubusercontent.com/MetaNovitia/codingsessions/master/public/topics/" +
                         this.quarter.split(" ")[0] + "%20" +
                         this.quarter.split(" ")[1] + "/" +
                         this.session + "_code.csv";
+
+        this.rlink =    "https://raw.githubusercontent.com/MetaNovitia/codingsessions/master/public/topics/" +
+                        this.quarter.split(" ")[0] + "%20" +
+                        this.quarter.split(" ")[1] + "/" +
+                        this.session + "_resources.csv";
         
     }
 
@@ -38,13 +46,17 @@ export default class Topic extends Component {
 
     componentDidMount() {
         $.ajax({
-            url: this.link,
+            url: this.slink,
             context: document.body
         }).done(this.processData);
         $.ajax({
             url: this.clink,
             context: document.body
         }).done(this.processCode);
+        $.ajax({
+            url: this.rlink,
+            context: document.body
+        }).done(this.processResources);
     }
 
     processData(data){
@@ -100,6 +112,21 @@ export default class Topic extends Component {
 
     }
 
+    processResources(data){
+        var lines = data.split(/\r\n|\n/);
+        var resources = [];
+        for (var i=1; i<lines.length; i++) {
+            var resource = lines[i].split(",");
+            if (resource[0]===resource[2]){
+                resources.push([]);
+            }
+            resources[resources.length-1].push(resource);
+        }
+        this.resources = <Resources resources={resources}></Resources>;
+        this.toggle();
+
+    }
+
     render() {
         return (
             <Container>
@@ -111,6 +138,10 @@ export default class Topic extends Component {
                 <Row>
                     {this.codes}
                     <img src={c_head} alt="C O D E" className = "head"/>
+                </Row>
+                <Row>
+                    <img src={s_head} alt="S L I D E S" className = "head"/>
+                    {this.resources}
                 </Row>
             </Container>
         );
