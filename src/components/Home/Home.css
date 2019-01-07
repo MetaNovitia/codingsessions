@@ -31,35 +31,3 @@
 .codes {
     text-align: left;
 }
-
-.blue {
-    background-color: rgb(138, 193, 224);
-}
-
-.red {
-    background-color: rgb(224, 144, 138);
-}
-
-.purple {
-    background-color: rgb(175, 138, 224);
-}
-
-.pink {
-    background-color: rgb(224, 138, 217);
-}
-
-.darkblue{
-    background-color: rgb(138, 151, 224);
-}
-
-.green {
-    background-color: rgb(138, 224, 184);
-}
-
-.yellow {
-    background-color: rgb(224, 222, 138);
-}
-
-.orange {
-    background-color: rgb(224, 190, 138);
-}

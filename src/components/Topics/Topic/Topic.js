@@ -118,7 +118,7 @@ export default class Topic extends Component {
         var resources = [];
         for (var i=1; i<lines.length; i++) {
             var resource = lines[i].split(",");
-            if (resource[0][0]===resource[2][0]){
+            if (resource[0]===resource[2]){
                 resources.push([]);
             }
             resources[resources.length-1].push(resource);
