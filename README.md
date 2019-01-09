@@ -5,7 +5,7 @@ Made for the Girl's Coding Nights series by ACM
 
 ### Topics
 - Slides    : short notes on each topic
-- Code      : generic code for each topic
+- Code      : generic code for each topic, including examples and short explanations
 - Resources : external resources ( buttons have random pastel colors :3 )
 
 ### Problems
