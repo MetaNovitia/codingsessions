@@ -13,7 +13,7 @@ export default class Session extends Component {
         this.quarter = props.quarter;
         this.session = props.session;
         this.rows = [[]];
-        this.end = true;
+        this.end = props.end;
         this.link = "https://raw.githubusercontent.com/MetaNovitia/codingsessions/master/public/" +
                     this.quarter.split(" ")[0] + "%20" + 
                     this.quarter.split(" ")[1] + "/" +
