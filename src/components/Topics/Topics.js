@@ -32,7 +32,7 @@ export default class Topics extends Component {
                     style={{
                         marginBottom: ((this.y-68-26)/2-30).toString() + "px"
                     }}
-            >January 9, 2019</Row>
+            >January 23, 2019</Row>
 
             <div><br/><br/></div>
 

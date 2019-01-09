@@ -33,7 +33,7 @@ export default class Puzzle extends Component {
                     style={{
                         marginBottom: ((this.y-68-26)/2).toString() + "px"
                     }}
-            >January 9, 2019</Row>
+            >January 23, 2019</Row>
             <div className='center'>
                 <Row className="center">
                     <Alert className="graphtraversal m">

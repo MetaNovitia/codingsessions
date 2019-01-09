@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Modal, ModalHeader, ModalBody} from 'reactstrap';
+import { Alert, Button, Modal, ModalHeader, ModalBody} from 'reactstrap';
 import './Solution.css';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import $ from 'jquery';
@@ -30,18 +30,27 @@ export default class Solution extends Component {
         this.link = props.link;
         this.txt = props.txt;
 
-        this.solLink =   "https://raw.githubusercontent.com/MetaNovitia/codingsessions/master/public/solutions/" +
-                            props.quarter.split(' ')[0] + "%20" + 
-                            props.quarter.split(' ')[1] + "/" + 
-                            props.session +"/"+props.link;
+        this.code = <Alert color="dark">Solutions will be posted after session ends!</Alert>;
+
+        if(props.link!==""){
+            this.solLink =   "https://raw.githubusercontent.com/MetaNovitia/codingsessions/master/public/solutions/" +
+                                props.quarter.split(' ')[0] + "%20" + 
+                                props.quarter.split(' ')[1] + "/" + 
+                                props.session +"/"+props.link;
+        }else{
+            this.solLink = "";
+            this.link = "No Solutions Yet! ;)";
+        }
         
     }
 
     componentDidMount() {
-        $.ajax({
-            url: this.solLink,
-            context: document.body
-        }).done(this.setCode);
+        if(this.solLink!==""){
+            $.ajax({
+                url: this.solLink,
+                context: document.body
+            }).done(this.setCode);
+        }
     }
 
     setCode(data){

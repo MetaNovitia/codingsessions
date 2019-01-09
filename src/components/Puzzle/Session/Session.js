@@ -41,7 +41,7 @@ export default class Session extends Component {
             }
 
             if(!this.end){
-                t = "Help";
+                t = "Solution";
                 data[3] = '';
             }
 

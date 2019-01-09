@@ -8,15 +8,23 @@ export default class Problem extends Component {
   constructor(props) {
     super(props);
     this.con = props.con;
-    this.solution=null;
-    if( props.slink !== ""){
-          this.solution = <Solution 
-                            txt = {props.txt} 
-                            link={props.slink} 
-                            quarter = {props.quarter}
-                            session = {props.session}
-                          ></Solution>
-    }
+    // this.solution=null;
+    // if( props.slink !== ""){
+    //       this.solution = <Solution 
+    //                         txt = {props.txt} 
+    //                         link={props.slink} 
+    //                         quarter = {props.quarter}
+    //                         session = {props.session}
+    //                       ></Solution>
+    // }
+
+    this.solution = <Solution 
+                      txt = {props.txt} 
+                      link={props.slink} 
+                      quarter = {props.quarter}
+                      session = {props.session}
+                    ></Solution>
+                    
     this.link = props.link
     this.obj =  <a  className= {"plink word "+this.props.diff} 
                     href={this.link} 
