@@ -47,7 +47,7 @@ export default class Puzzle extends Component {
 
             <div><br/><br/></div>
             
-            <Session end = {false} quarter="Winter 2019" session='1'></Session>
+            <Session end = {true} quarter="Winter 2019" session='1'></Session>
             <Footer></Footer>
         </Container>
         );
